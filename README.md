@@ -1,27 +1,20 @@
----
-id: move-language
-title: Move Language
-custom_edit_url: https://github.com/move-language/move/edit/main/language/README.md
----
+Move is a smart contract programming language that captures the essence of safe programming with digital assets. Move is designed around the following values:
 
-Move is a new programming language developed to provide a safe and programmable foundation for smart contract development.
+1.Secure by default
+Insecure languages are a serious barrier both to accessible smart contract development and to mainstream adoption of digital assets. The first duty of a smart contract language is to prevent as many potential safety issues as possible (e.g. re-entrancy, missing access control checks, arithmetic overflow, ...) by construction. Any changes to Move should preserve or enhance its existing security guarantees.
 
-## Overview
+2. Expressive by nature
+Move must enable programmers to write any smart contract they can imagine. But we care as much about the way it feels to write Move as we do about what Move allows you to do--the language should be rich enough that the features needed for a task are available, and minimal enough that the choice is obvious. The Move toolchain should be a productivity enhancer and a thought partner.
 
-The Move language directory consists of three distinct parts: the Move bytecode language, the Move intermediate representation (IR), and the Move source language.
+3. Intuitive for all
+Smart contracts are only one part of a useful application. Move should understand the broader context of its usage and design with both the smart contract developer and the application developer in mind. It should be easy for developers to learn how to read Move-managed state, build Move powered transactions, and write new Move code.
 
-- The Move bytecode language defines programs published to the blockchain. It has a static type system that guarantees the absence of certain critical errors, including the prevention of duplicating certain values. Relevant crates include:
-  - [move-binary-format](crates/move-binary-format/) defines the binary format for Move bytecode.
-  - [move-bytecode-verifier](crates/move-bytecode-verifier/) provides the static safety checks for Move bytecode.
-  - [move-vm-types](crates/move-vm-types/) provides a shared utility crate types used by the Move VM and adapting layers.
-  - [move-vm-runtime](crates/move-vm-runtime/) provides the runtime for the Move VM, used for executing Move programs.
+The core technical elements of Move are:
 
-- The Move IR is a low-level intermediate representation that closely mirrors Move bytecode. What mainly differentiates it from the bytecode is that names are used as opposed to indexes into pools/tables. Relevant crates include:
-  - [move-ir-types](crates/move-ir-types/) defines the IRs Rust types, notably the AST.
-  - [move-ir](crates/move-ir-to-bytecode/) compiles the IR to the bytecode.
+- Safe, familiar, and flexible abstractions for digital assets via programmable *objects*.
+- A rich *ability* system (inspired by linear types) that gives programmers extreme control of how values are created, destroyed, stored, copied, and transferred.
+- A *module/* system with strong encapsulation features to enable code reuse while maintaining this control.
+- *Dynamic fields* for creating hierarchical relationships between objects.
+- *Programmable transaction blocks* (PTBs) to enable atomic client-side composition of Move-powered APIs.
 
-- The Move source language is a high-level language that compiles to Move bytecode. It is designed to be a familiar and ergonomic language for developers that provides minimal abstractions over the Move bytecode. Relevant crates include:
-  - [move-compiler](crates/move-compiler/) defines the source language and all compilation steps up to the Move IR.
-  - [move-analyzer](crates/move-analyzer/) provides the IDE integration for the source language.
-  - [move-package](crates/move-package/) defines the package system used for organizing Move source code.
-  - [move-cli](crates/move-cli/) provides a standard implementation for command-line utilities, such as building Move binary files and running tests.
+Move was born in 2018 as part of Facebook's Libra project. It was publicly revealed in 2019, the first Move-powered network launched in 2020. As of April 2024, there are numerous Move-powered chains in production with several more in the works. Move is an embedded language with a platform-agnostic core, which means it takes on a slightly different personality in each chain that uses it.
