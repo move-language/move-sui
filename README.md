@@ -8,7 +8,7 @@ Insecure languages are a serious barrier both to accessible smart contract devel
    
 Move must enable programmers to write any smart contract they can imagine. But we care as much about the way it feels to write Move as we do about what Move allows you to do--the language should be rich enough that the features needed for a task are available, and minimal enough that the choice is obvious. The Move toolchain should be a productivity enhancer and a thought partner.
 
-4. **Intuitive for all**
+3. **Intuitive for all**
    
 Smart contracts are only one part of a useful application. Move should understand the broader context of its usage and design with both the smart contract developer and the application developer in mind. It should be easy for developers to learn how to read Move-managed state, build Move powered transactions, and write new Move code.
 
