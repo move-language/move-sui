@@ -45,3 +45,6 @@ mod reference_safety;
 mod regression_tests;
 mod stack_usage_verifier;
 mod type_safety;
+
+#[cfg(test)]
+mod type_safety_tests;
