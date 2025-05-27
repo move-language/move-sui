@@ -24,6 +24,12 @@ struct Mixed {
     return_type: Option<SignatureToken>,
 }
 
+#[no_mangle]
+pub extern "C" fn main() -> i32 {
+    libfuzzer_sys::initialize(std::ptr::null(), std::ptr::null());
+    return 0;
+}
+
 fuzz_target!(|mix: Mixed| {
     let mut module = empty_module();
     module.version = 5;

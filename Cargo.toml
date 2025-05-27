@@ -21,7 +21,7 @@ members = [
     # "move-execution/$CUT/crates/move-vm-runtime",
     "move-execution/v0/crates/move-stdlib-natives",
     "move-execution/v1/crates/move-stdlib-natives",
-    "move-execution/v2/crates/move-stdlib-natives",
+    "move-execution/v2/crates/move-stdlib-natives", "tools/criterion-cpu-time",
     # "move-execution/$CUT/crates/move-stdlib-natives",
 ]
 
@@ -42,7 +42,7 @@ codespan = "0.11.1"
 codespan-reporting = "0.11.1"
 colored = "2.0.0"
 criterion = "0.3.4"
-criterion-cpu-time = "0.1.0"
+criterion-cpu-time = { path = "tools/criterion-cpu-time" }
 crossbeam = "0.8"
 crossbeam-channel = "0.5.0"
 crossterm = "0.25.0"

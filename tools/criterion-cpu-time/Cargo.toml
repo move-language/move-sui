@@ -1,0 +1,9 @@
+[package]
+name = "criterion-cpu-time"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+criterion = "0.6.0"
+libc = "0.2"
+windows-sys = { version = "0.48", features = ["Win32_System_Threading", "Win32_Foundation"] }
